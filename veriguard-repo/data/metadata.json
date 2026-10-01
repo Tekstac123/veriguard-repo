@@ -1,0 +1,142 @@
+[
+  {
+    "blob": "policies/credit-risk-policy-v2.md",
+    "document": "credit-risk-policy",
+    "doc_type": "policy",
+    "version": "v2",
+    "effective_date": "2025-04-01",
+    "classification": "Internal",
+    "access_group": "risk-team",
+    "status": "current"
+  },
+  {
+    "blob": "policies/credit-risk-policy-v1.md",
+    "document": "credit-risk-policy",
+    "doc_type": "policy",
+    "version": "v1",
+    "effective_date": "2023-01-01",
+    "classification": "Internal",
+    "access_group": "risk-team",
+    "status": "superseded"
+  },
+  {
+    "blob": "policies/data-retention-policy-v2.md",
+    "document": "data-retention-policy",
+    "doc_type": "policy",
+    "version": "v2",
+    "effective_date": "2025-03-01",
+    "classification": "Internal",
+    "access_group": "compliance-team",
+    "status": "current"
+  },
+  {
+    "blob": "policies/data-retention-policy-v1.md",
+    "document": "data-retention-policy",
+    "doc_type": "policy",
+    "version": "v1",
+    "effective_date": "2022-06-01",
+    "classification": "Internal",
+    "access_group": "compliance-team",
+    "status": "superseded"
+  },
+  {
+    "blob": "policies/access-control-policy-v2.md",
+    "document": "access-control-policy",
+    "doc_type": "policy",
+    "version": "v2",
+    "effective_date": "2025-02-01",
+    "classification": "Confidential",
+    "access_group": "security-team",
+    "status": "current"
+  },
+  {
+    "blob": "policies/access-control-policy-v1.md",
+    "document": "access-control-policy",
+    "doc_type": "policy",
+    "version": "v1",
+    "effective_date": "2023-09-01",
+    "classification": "Confidential",
+    "access_group": "security-team",
+    "status": "superseded"
+  },
+  {
+    "blob": "kyc-procedures/kyc-onboarding-procedure-v2.md",
+    "document": "kyc-onboarding-procedure",
+    "doc_type": "kyc_procedure",
+    "version": "v2",
+    "effective_date": "2025-05-01",
+    "classification": "Internal",
+    "access_group": "kyc-ops",
+    "status": "current"
+  },
+  {
+    "blob": "kyc-procedures/kyc-onboarding-procedure-v1.md",
+    "document": "kyc-onboarding-procedure",
+    "doc_type": "kyc_procedure",
+    "version": "v1",
+    "effective_date": "2023-11-01",
+    "classification": "Internal",
+    "access_group": "kyc-ops",
+    "status": "superseded"
+  },
+  {
+    "blob": "kyc-procedures/kyc-periodic-review-procedure-v2.md",
+    "document": "kyc-periodic-review-procedure",
+    "doc_type": "kyc_procedure",
+    "version": "v2",
+    "effective_date": "2025-05-15",
+    "classification": "Internal",
+    "access_group": "kyc-ops",
+    "status": "current"
+  },
+  {
+    "blob": "kyc-procedures/kyc-periodic-review-procedure-v1.md",
+    "document": "kyc-periodic-review-procedure",
+    "doc_type": "kyc_procedure",
+    "version": "v1",
+    "effective_date": "2023-11-01",
+    "classification": "Internal",
+    "access_group": "kyc-ops",
+    "status": "superseded"
+  },
+  {
+    "blob": "regulatory-digests/rbi-kyc-digest-2025-v1.md",
+    "document": "rbi-kyc-digest-2025",
+    "doc_type": "regulatory_digest",
+    "version": "v1",
+    "effective_date": "2025-01-15",
+    "classification": "Internal",
+    "access_group": "compliance-team",
+    "status": "current"
+  },
+  {
+    "blob": "regulatory-digests/aml-reporting-digest-2025-v1.md",
+    "document": "aml-reporting-digest-2025",
+    "doc_type": "regulatory_digest",
+    "version": "v1",
+    "effective_date": "2025-01-20",
+    "classification": "Internal",
+    "access_group": "compliance-team",
+    "status": "current"
+  },
+  {
+    "blob": "audit-reports/internal-audit-q2-2025-v1.md",
+    "document": "internal-audit-q2-2025",
+    "doc_type": "audit_report",
+    "version": "v1",
+    "effective_date": "2025-07-10",
+    "classification": "Confidential",
+    "access_group": "audit-team",
+    "status": "current"
+  },
+  {
+    "blob": "audit-reports/internal-audit-q3-2025-v1.md",
+    "document": "internal-audit-q3-2025",
+    "doc_type": "audit_report",
+    "version": "v1",
+    "effective_date": "2025-10-10",
+    "classification": "Confidential",
+    "access_group": "audit-team",
+    "status": "current"
+  }
+]

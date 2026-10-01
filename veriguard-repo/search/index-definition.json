@@ -1,0 +1,144 @@
+{
+  "name": "veriguard-m1-index",
+  "fields": [
+    {
+      "name": "id",
+      "type": "Edm.String",
+      "retrievable": true,
+      "key": true,
+      "filterable": true
+    },
+    {
+      "name": "content",
+      "type": "Edm.String",
+      "retrievable": true,
+      "searchable": true
+    },
+    {
+      "name": "content_vector",
+      "type": "Collection(Edm.Single)",
+      "retrievable": true,
+      "searchable": true,
+      "dimensions": 1536,
+      "vectorSearchProfile": "veriguard-vector-profile"
+    },
+    {
+      "name": "doc_type",
+      "type": "Edm.String",
+      "retrievable": true,
+      "filterable": true,
+      "facetable": true,
+      "searchable": false
+    },
+    {
+      "name": "version",
+      "type": "Edm.String",
+      "retrievable": true,
+      "filterable": true,
+      "facetable": true,
+      "searchable": false
+    },
+    {
+      "name": "classification",
+      "type": "Edm.String",
+      "retrievable": true,
+      "filterable": true,
+      "facetable": true,
+      "searchable": false
+    },
+    {
+      "name": "effective_date",
+      "type": "Edm.DateTimeOffset",
+      "retrievable": true,
+      "filterable": true,
+      "sortable": true
+    },
+    {
+      "name": "access_group",
+      "type": "Edm.String",
+      "retrievable": true,
+      "filterable": true,
+      "facetable": true,
+      "searchable": false
+    },
+    {
+      "name": "document",
+      "type": "Edm.String",
+      "retrievable": true,
+      "filterable": true,
+      "facetable": true,
+      "searchable": false
+    },
+    {
+      "name": "section",
+      "type": "Edm.String",
+      "retrievable": true,
+      "filterable": true,
+      "facetable": true,
+      "searchable": false
+    },
+    {
+      "name": "page",
+      "type": "Edm.String",
+      "retrievable": true,
+      "filterable": true,
+      "facetable": true,
+      "searchable": false
+    },
+    {
+      "name": "is_current",
+      "type": "Edm.Boolean",
+      "retrievable": true,
+      "filterable": true
+    }
+  ],
+  "vectorSearch": {
+    "algorithms": [
+      {
+        "name": "veriguard-hnsw",
+        "kind": "hnsw"
+      }
+    ],
+    "profiles": [
+      {
+        "name": "veriguard-vector-profile",
+        "algorithm": "veriguard-hnsw",
+        "vectorizer": "veriguard-aoai-vectorizer"
+      }
+    ],
+    "vectorizers": [
+      {
+        "name": "veriguard-aoai-vectorizer",
+        "kind": "azureOpenAI",
+        "azureOpenAIParameters": {
+          "resourceUri": "<FOUNDRY_ENDPOINT>",
+          "deploymentId": "text-embedding-3-small",
+          "modelName": "text-embedding-3-small"
+        }
+      }
+    ]
+  },
+  "semantic": {
+    "defaultConfiguration": "veriguard-semantic",
+    "configurations": [
+      {
+        "name": "veriguard-semantic",
+        "prioritizedFields": {
+          "titleField": {
+            "fieldName": "document"
+          },
+          "prioritizedContentFields": [
+            {
+              "fieldName": "content"
+            }
+          ],
+          "prioritizedKeywordsFields": [
+            {
+              "fieldName": "doc_type"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

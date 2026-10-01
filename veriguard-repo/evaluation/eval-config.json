@@ -1,0 +1,17 @@
+{
+  "dataset": "veriguard-m1-evaluation",
+  "version": "1",
+  "modes": [
+    "vector_only",
+    "hybrid",
+    "hybrid_semantic_rerank"
+  ],
+  "top_k": 5,
+  "thresholds": {
+    "recall_at_5": 0.8,
+    "citation_accuracy": 0.9,
+    "groundedness": 4.0,
+    "unanswerable_decline_rate": 0.8,
+    "superseded_trap_pass_rate": 1.0
+  }
+}
