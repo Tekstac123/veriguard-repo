@@ -1,0 +1,47 @@
+{
+  "name": "veriguard-supervisor",
+  "description": "Supervisor agent for VeriGuard compliance investigations",
+  "model": "<CHAT_DEPLOYMENT_NAME>",
+  "purpose": "Plan the investigation, route work to specialist agents, and merge results",
+  "instructions": "You receive a suspicious-activity alert or customer case. Decide which specialist tasks are required, route them in order (transaction monitoring, risk assessment, compliance investigation), and merge the specialist outputs into one investigation result. You never execute high-risk actions yourself: any case with risk_score >= 70 or a recommendation of escalate or report must pause for Principal Officer approval.",
+  "specialists": [
+    "veriguard-transaction-monitoring",
+    "veriguard-risk-assessment",
+    "veriguard-compliance-investigator"
+  ],
+  "approval": {
+    "role": "Principal Officer",
+    "conditions": [
+      "risk_score >= 70",
+      "recommendation = escalate",
+      "recommendation = report"
+    ],
+    "outcomes": [
+      "approve",
+      "reject"
+    ]
+  },
+  "output_schema": {
+    "type": "object",
+    "required": [
+      "case_id",
+      "status",
+      "risk_score",
+      "disposition"
+    ],
+    "properties": {
+      "case_id": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "risk_score": {
+        "type": "integer"
+      },
+      "disposition": {
+        "type": "string"
+      }
+    }
+  }
+}

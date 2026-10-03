@@ -1,0 +1,54 @@
+{
+  "alerts": [
+    {
+      "alert_id": "ALERT-001",
+      "name": "True structuring",
+      "customer_id": "C-1001",
+      "customer_name": "Ravi Kumar Textiles",
+      "start_date": "2026-08-01",
+      "end_date": "2026-08-31",
+      "description": "Repeated cash deposits just below the reporting threshold",
+      "expected": {
+        "disposition": "escalate",
+        "min_risk_score": 70,
+        "typologies": [
+          "structuring"
+        ],
+        "requires_approval": true,
+        "citations_required": true
+      }
+    },
+    {
+      "alert_id": "ALERT-002",
+      "name": "False positive - salary bonus",
+      "customer_id": "C-1002",
+      "customer_name": "Anita Sharma",
+      "start_date": "2026-08-01",
+      "end_date": "2026-08-31",
+      "description": "Single large credit from employer",
+      "expected": {
+        "disposition": "close_false_positive",
+        "max_risk_score": 29,
+        "typologies": [],
+        "requires_approval": false,
+        "citations_required": false
+      }
+    },
+    {
+      "alert_id": "ALERT-003",
+      "name": "Sanctions near-match",
+      "customer_id": "C-1003",
+      "customer_name": "Mohammad Al-Rashid Trading LLC",
+      "start_date": "2026-08-01",
+      "end_date": "2026-08-31",
+      "description": "Customer name resembles a sanctioned entity",
+      "expected": {
+        "disposition": "escalate",
+        "min_risk_score": 70,
+        "watchlist_status": "near",
+        "requires_approval": true,
+        "citations_required": true
+      }
+    }
+  ]
+}

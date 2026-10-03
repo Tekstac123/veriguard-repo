@@ -1,0 +1,37 @@
+{
+  "name": "veriguard-compliance-investigator",
+  "description": "Map investigation findings to policy clauses and assemble the case file",
+  "model": "<CHAT_DEPLOYMENT_NAME>",
+  "knowledge": {
+    "knowledge_base": "veriguard-kb",
+    "source": "Milestone 1 Foundry IQ knowledge base"
+  },
+  "instructions": "Use only evidence retrieved from veriguard-kb. Prefer the current effective version of every document. Preserve citations (document, version, section, page). If the knowledge base returns no supporting evidence, state that evidence is insufficient instead of making a policy claim.",
+  "output_schema": {
+    "type": "object",
+    "required": [
+      "case_summary",
+      "findings",
+      "policy_mappings",
+      "citations",
+      "recommended_action"
+    ],
+    "properties": {
+      "case_summary": {
+        "type": "string"
+      },
+      "findings": {
+        "type": "array"
+      },
+      "policy_mappings": {
+        "type": "array"
+      },
+      "citations": {
+        "type": "array"
+      },
+      "recommended_action": {
+        "type": "string"
+      }
+    }
+  }
+}

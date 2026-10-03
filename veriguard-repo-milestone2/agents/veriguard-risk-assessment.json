@@ -1,0 +1,65 @@
+{
+  "name": "veriguard-risk-assessment",
+  "description": "Calculate an explainable 0-100 risk score",
+  "model": "<CHAT_DEPLOYMENT_NAME>",
+  "tools": [
+    {
+      "type": "mcp",
+      "server_label": "kyc-service",
+      "operations": [
+        "get_kyc_profile"
+      ]
+    },
+    {
+      "type": "mcp",
+      "server_label": "watchlist-screening",
+      "operations": [
+        "screen_name"
+      ]
+    }
+  ],
+  "instructions": "Combine KYC risk category, watchlist result, geography and transaction velocity with the transaction-monitoring findings into a 0-100 score. List every contributing factor with its points. Never guess missing KYC or watchlist data.",
+  "scoring": {
+    "kyc": {
+      "low": 5,
+      "medium": 15,
+      "high": 25
+    },
+    "structuring": 45,
+    "rapid_in_out": 30,
+    "high_risk_geography": 20,
+    "watchlist_exact": 60,
+    "watchlist_near": 40,
+    "velocity_25_plus_txns": 10,
+    "cap": 100
+  },
+  "output_schema": {
+    "type": "object",
+    "required": [
+      "risk_score",
+      "risk_factors",
+      "watchlist_result",
+      "risk_explanation",
+      "recommended_disposition"
+    ],
+    "properties": {
+      "risk_score": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 100
+      },
+      "risk_factors": {
+        "type": "array"
+      },
+      "watchlist_result": {
+        "type": "object"
+      },
+      "risk_explanation": {
+        "type": "string"
+      },
+      "recommended_disposition": {
+        "type": "string"
+      }
+    }
+  }
+}

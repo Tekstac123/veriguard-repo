@@ -1,0 +1,52 @@
+{
+  "name": "veriguard-transaction-monitoring",
+  "description": "Detect transaction typologies",
+  "model": "<CHAT_DEPLOYMENT_NAME>",
+  "tools": [
+    {
+      "type": "mcp",
+      "server_label": "txn-db",
+      "operations": [
+        "query_transactions"
+      ]
+    }
+  ],
+  "instructions": "Query transactions for the customer with customer_id and the date range. Identify structuring, rapid in-out activity, and high-risk geography using only tool results. If the tool fails, report the failure; never invent transactions.",
+  "output_schema": {
+    "type": "object",
+    "required": [
+      "findings"
+    ],
+    "properties": {
+      "findings": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "typology",
+            "evidence",
+            "finding",
+            "confidence"
+          ],
+          "properties": {
+            "typology": {
+              "type": "string"
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "finding": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    }
+  }
+}
