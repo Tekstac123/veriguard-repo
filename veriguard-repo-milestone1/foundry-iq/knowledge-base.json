@@ -1,0 +1,22 @@
+{
+  "name": "veriguard-kb",
+  "description": "VeriGuard financial compliance and risk knowledge base",
+  "knowledgeSources": [
+    {
+      "name": "veriguard-financial-documents"
+    }
+  ],
+  "models": [
+    {
+      "kind": "azureOpenAI",
+      "deploymentId": "<CHAT_DEPLOYMENT_NAME>",
+      "modelName": "<CHAT_MODEL_NAME>"
+    }
+  ],
+  "retrievalReasoningEffort": {
+    "kind": "minimal"
+  },
+  "outputMode": "extractiveData",
+  "retrievalInstructions": "Answer only from retrieved VeriGuard knowledge and include source citations.",
+  "_note": "Verify property names against the preview api-version used at deploy time."
+}

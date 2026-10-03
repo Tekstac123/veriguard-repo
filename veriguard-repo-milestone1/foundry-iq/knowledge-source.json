@@ -1,0 +1,15 @@
+{
+  "name": "veriguard-financial-documents",
+  "kind": "azureBlob",
+  "description": "VeriGuard synthetic financial documents",
+  "azureBlobParameters": {
+    "connectionString": "<STORAGE_RESOURCE_ID_CONNECTION>",
+    "containerName": "policies,regulatory-digests,audit-reports,kyc-procedures",
+    "embeddingModel": {
+      "deploymentName": "text-embedding-3-small",
+      "modelName": "text-embedding-3-small"
+    },
+    "contentExtractionMode": "default"
+  },
+  "_note": "Property names follow the Azure AI Search knowledge source preview API; verify against the api-version used at deploy time."
+}
